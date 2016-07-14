@@ -3,10 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tasks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="SimpleNum Generator" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Width="415" Height="400" WindowStyle="ToolWindow" Background="White">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="Generate" Content="Get" Grid.Row="0" Grid.Column="1" Margin="5"  Foreground="Black" Background="#26323232" BorderThickness="2" FontWeight="Bold" Click="Generate_Click"/>
+        <TextBox x:Name="InputBoxGet" Grid.Row="0" Grid.Column="2" Margin="5" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput="InputBox_NumberValidationInput">
+            <TextBox.ToolTip>Max possible number, returned by generator.</TextBox.ToolTip>
+        </TextBox>
+        <Button x:Name="PopButton" Content="De_queue" Grid.Row="0" Grid.Column="3" Margin="5" Foreground="Black" Background="#26323232" BorderThickness="2" FontWeight="Bold" Click="PopButton_Click"/>
+        <TextBox x:Name="InputBoxPop" Grid.Row="0" Grid.Column="4" Margin="5" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" PreviewTextInput="InputBox_NumberValidationInput">
+            <TextBox.ToolTip>Count of number, returned from _queue.</TextBox.ToolTip>
+        </TextBox>
+        <Button x:Name="Exit" Content="Exit" Grid.Row="0" Grid.Column="5" Margin="5" Foreground="Black" Background="#26323232" BorderThickness="2" FontWeight="Bold" Click="Exit_Click"/>
+        <ListBox x:Name="PushBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Margin="3" ></ListBox>
+        <ListBox x:Name="PopBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Margin="3" ></ListBox>
     </Grid>
 </Window>
